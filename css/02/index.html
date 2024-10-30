@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        background-color: #d5d4d4;
+        width: 300px;
+        border-radius: 8px;
+        color: black;
+        display: flex;
+        align-items: center;
+        /* height: 400px; */
+        /* justify-content: space-between; */
+        gap: 10px;
+        flex-direction: column;
+        padding: 40px;
+      }
+
+      .box h1 {
+        font-weight: bold;
+        color: #1a50a0;
+      }
+
+      .box input {
+        /* font-size: small; */
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #000;
+        border-radius: 6px;
+      }
+
+      .box button {
+        /* padding-inline: 20px; */
+        width: 100%;
+        padding-block: 5px;
+        font-size: medium;
+        cursor: pointer;
+        background: #1a4fa079;
+        border-radius: 5px;
+        border: 2px solid #1a50a0;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div class="box">
+        <h1>Login</h1>
+        <input title="name" type="text" name="name" id="" class="input name" />
+        <input
+          title="password"
+          type="text"
+          name="username"
+          id=""
+          class="input password"
+        />
+        <button title="button" type="button">Login</button>
+      </div>
+    </form>
+  </body>
+</html>

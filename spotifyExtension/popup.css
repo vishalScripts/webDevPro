@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.widget {
+  width: 200px;
+  padding: 10px;
+  background-color: #1db954;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.controls button {
+  background-color: white;
+  color: #1db954;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume {
+  margin-top: 10px;
+}
+
+input[type="range"] {
+  width: 100%;
+}

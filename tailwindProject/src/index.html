@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trying it</title>
+    <link href="./output.css" rel="stylesheet" />
+    <style>
+      /* Optional styling for the progress bar */
+      progress {
+        width: 100%;
+        height: 10px;
+        appearance: none;
+      }
+
+      progress::-webkit-progress-bar {
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      progress::-webkit-progress-value {
+        background: linear-gradient(
+          90deg,
+          rgba(223, 50, 50, 0.3113620448179272) 0%,
+          rgba(186, 27, 10, 0.7511379551820728) 35%,
+          rgba(252, 0, 0, 1) 100%
+        );
+        border-radius: 5px;
+      }
+
+      progress::-moz-progress-bar {
+        background-color: #4caf50;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <h1
+      class="bg-red-600 text-3xl font-bold text-center p-8 text-white font-mono"
+    >
+      Motivation ?
+    </h1>
+    <div class="container mx-auto my-6 flex space-x-4">
+      <div>
+        <video
+          class="w-60 video rounded-md overflow-hidden opacity-20 grayscale hover:opacity-100 hover:grayscale-0 hover:shadow-2xl transition-shadow hover:shadow-red-600 duration-300"
+          src="./videos/Snapinsta.app_video_4D414823DC4481374E89C94D7296CCAE_video_dashinit.mp4"
+        ></video>
+        <progress value="0" max="100"></progress>
+      </div>
+      <div>
+        <video
+          class="w-60 video rounded-md overflow-hidden opacity-20 grayscale hover:opacity-100 hover:grayscale-0 hover:shadow-2xl transition-shadow hover:shadow-red-600 duration-300"
+          src="./videos/Snapinsta.app_video_4D414823DC4481374E89C94D7296CCAE_video_dashinit.mp4"
+        ></video>
+        <progress value="0" max="100"></progress>
+      </div>
+      <div>
+        <video
+          class="w-60 video rounded-md overflow-hidden opacity-20 grayscale hover:opacity-100 hover:grayscale-0 hover:shadow-2xl transition-shadow hover:shadow-red-600 duration-300"
+          src="./videos/Snapinsta.app_video_4D414823DC4481374E89C94D7296CCAE_video_dashinit.mp4"
+        ></video>
+        <progress value="0" max="100"></progress>
+      </div>
+      <div>
+        <video
+          class="w-60 video rounded-md overflow-hidden opacity-20 grayscale hover:opacity-100 hover:grayscale-0 hover:shadow-2xl transition-shadow hover:shadow-red-600 duration-300"
+          src="./videos/Snapinsta.app_video_4D414823DC4481374E89C94D7296CCAE_video_dashinit.mp4"
+        ></video>
+        <progress value="0" max="100"></progress>
+      </div>
+      <div>
+        <video
+          class="w-60 video rounded-md overflow-hidden opacity-20 grayscale hover:opacity-100 hover:grayscale-0 hover:shadow-2xl transition-shadow hover:shadow-red-600 duration-300"
+          src="./videos/Snapinsta.app_video_4D414823DC4481374E89C94D7296CCAE_video_dashinit.mp4"
+        ></video>
+        <progress value="0" max="100"></progress>
+      </div>
+    </div>
+
+    <script>
+      let videos = document.querySelectorAll(".video");
+
+      videos.forEach((video, index) => {
+        let progressBar = document.querySelectorAll("progress")[index];
+
+        // Update progress bar as video plays
+        video.addEventListener("timeupdate", () => {
+          let percentage = (video.currentTime / video.duration) * 100;
+          progressBar.value = percentage;
+        });
+
+        video.addEventListener("mouseover", () => {
+          video.play();
+          video.classList.add("glow"); // Add glow to hovered video
+
+          // Apply grayscale to all other videos
+          videos.forEach((otherVideo) => {
+            if (otherVideo !== video) {
+              otherVideo.classList.add("grayscale");
+            }
+          });
+        });
+
+        video.addEventListener("mouseout", () => {
+          video.pause();
+          video.classList.remove("glow"); // Remove glow when mouse leaves
+
+          // Remove grayscale from all videos
+          videos.forEach((otherVideo) => {
+            otherVideo.classList.remove("grayscale");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
